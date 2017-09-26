@@ -1,0 +1,53 @@
+﻿<Window x:Class="Agenda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agenda"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="540">
+    <Grid Margin="0,4,-0.667,-4.333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="6,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="504" RenderTransformOrigin="0.491,1.928" Margin="10,3,0,0">
+            <Button Content="Consultar" Margin="435.667,4.667,8.333,7.333" RenderTransformOrigin="0.5,0.508" Click="Button_Click" Height="18"/>
+        </Border>
+        <Label Content="Endereço" HorizontalAlignment="Left" Margin="7,107,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="tb_endereco" HorizontalAlignment="Left" Height="22" Margin="70,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" TextChanged="TextBox_TextChanged"/>
+        <Label Content="CPF" HorizontalAlignment="Left" Margin="336,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="30"/>
+        <TextBox x:Name="tb_cpf" TextWrapping="Wrap" Height="22" Margin="0,56,7.333,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="140"/>
+        <Label Content="Bairro" HorizontalAlignment="Left" Margin="6,136,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="tb_bairro" HorizontalAlignment="Left" Height="22" Margin="53,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Cidade" HorizontalAlignment="Left" Margin="260,136,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="tb_cidade" HorizontalAlignment="Left" Height="22" Margin="312,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
+        <Label Content="UF" HorizontalAlignment="Left" Margin="7,162,0,0" VerticalAlignment="Top" Width="29"/>
+        <ComboBox x:Name="cb_uf" HorizontalAlignment="Left" Margin="42,165,0,0" VerticalAlignment="Top" Width="42" Height="22" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label Content="CEP&#xD;&#xA;" HorizontalAlignment="Left" Margin="89,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="33" Height="26"/>
+        <TextBox x:Name="tb_cep" HorizontalAlignment="Left" Height="22" Margin="120,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Número" HorizontalAlignment="Left" Margin="374,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="54"/>
+        <TextBox x:Name="tb_numero" TextWrapping="Wrap" Height="22" Margin="433,112,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <Label Content="Telefone" HorizontalAlignment="Left" Margin="259,163,0,0" VerticalAlignment="Top" Width="57"/>
+        <TextBox x:Name="tb_telefone" HorizontalAlignment="Left" Height="22" Margin="312,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Celular" HorizontalAlignment="Left" Margin="7,192,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="tb_celular" HorizontalAlignment="Left" Height="22" Margin="60,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" TextChanged="TextBox_TextChanged"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="260,194,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="tb_email" HorizontalAlignment="Left" Height="22" Margin="312,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Data Nasc." HorizontalAlignment="Left" Margin="336,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="79"/>
+        <DatePicker x:Name="dp_data_nascimento" HorizontalAlignment="Left" Margin="413,82,0,0" VerticalAlignment="Top" Height="22"/>
+        <Label Content="Sexo" HorizontalAlignment="Left" Margin="6,80,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296"/>
+        <Label Content="Buscar por Id" HorizontalAlignment="Left" Margin="274,4,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Margin="357,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" TextChanged="TextBox_TextChanged_2"/>
+        <RadioButton x:Name="rb_masculino" Content="Masculino" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" Width="100" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="rb_feminino" Content="Feminino" HorizontalAlignment="Left" Margin="180,86,0,0" VerticalAlignment="Top" Width="100" Checked="RadioButton_Checked"/>
+        <TextBox x:Name="tb_nome" HorizontalAlignment="Right" Height="22" Margin="0,55,187.333,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="btn_excluir" Content="Excluir" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" RenderTransformOrigin="0.818,0.655"/>
+        <Button x:Name="btn_alterar" Content="Alterar" HorizontalAlignment="Left" Margin="309,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="btn_novo" Content="Novo" HorizontalAlignment="Left" Margin="433,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="btn_fechar" Content="Fechar" HorizontalAlignment="Left" Margin="23,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <DataGrid x:Name="dg_conteudo" HorizontalAlignment="Left" Height="392" Margin="23,356,0,0" VerticalAlignment="Top" Width="485"/>
+        <ScrollViewer x:Name="sv_pagina" HorizontalAlignment="Left" Height="771" Margin="521,0,-101,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>
