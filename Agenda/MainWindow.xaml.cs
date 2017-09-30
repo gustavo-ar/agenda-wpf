@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,9 @@ namespace Agenda
             InitializeComponent();
         }
 
+
+   
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -32,7 +36,11 @@ namespace Agenda
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ContatoDAO dao = new ContatoDAO();
+            int id = Int32.Parse( inputID.Text);
+            Contato contato = dao.BuscarContatoPorID(id);
 
+            Console.WriteLine(contato.Nome);
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -57,7 +65,7 @@ namespace Agenda
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+          
         }
     }
 }
