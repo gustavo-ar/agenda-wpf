@@ -65,7 +65,22 @@ namespace Agenda
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-          
+            ContatoDAO dao = new ContatoDAO();
+
+            Contato contato = new Contato();
+
+            contato.Nome = "Batata";
+            contato.Endereco = "Teste";
+            contato.Numero = 200;
+            contato.Bairro = "Teste";
+            contato.Cidade = "Teste";
+            contato.Uf = "Teste";
+            contato.Cep = "Teste";
+            contato.Telefone = "Teste";
+            contato.Celular = "Teste";
+            contato.Email = "Teste";
+
+            dao.InserirContato(contato);
         }
     }
 }
