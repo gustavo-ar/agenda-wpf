@@ -26,49 +26,61 @@ namespace Agenda
             InitializeComponent();
         }
 
-
-
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BuscarPorId(object sender, RoutedEventArgs e)
         {
             ContatoDAO dao = new ContatoDAO();
             int id = Int32.Parse(inputID.Text);
             Contato contato = dao.BuscarContatoPorID(id);
 
-            Console.WriteLine(contato.Nome);
+            tb_nome.Text = contato.Nome;
+            tb_endereco.Text = contato.Endereco;
+            tb_numero.Text = contato.Numero.ToString();
+            tb_bairro.Text = contato.Bairro;
+            tb_cidade.Text = contato.Cidade;
+            tb_cep.Text = contato.Cep;
+            tb_telefone.Text = contato.Telefone;
+            tb_celular.Text = contato.Celular;
+            tb_email.Text = contato.Email;
+            tb_id.Text = contato.Id.ToString();
+
+            ResetBtns(true);
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void ResetBtns(bool b)
         {
-
+            btn_alterar.IsEnabled = b;
+            btn_excluir.IsEnabled = b;
+            btn_novo.IsEnabled = !b;
         }
 
-        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-           
-
-        private void novoContato(object sender, RoutedEventArgs e)
+        private void NovoContato(object sender, RoutedEventArgs e)
         {
             ContatoDAO dao = new ContatoDAO();
 
-            Contato contato = new Contato
+            Contato contato = CriarContato();
+
+            dao.InserirContato(contato);
+            ResetInputs();
+            MessageBox.Show("Contato inserido com sucesso");
+        }
+
+        private void ResetInputs()
+        {
+            tb_nome.Text = "";
+            tb_endereco.Text = "";
+            tb_numero.Text = "";
+            tb_bairro.Text = "";
+            tb_cidade.Text = "";
+            tb_cep.Text = "";
+            tb_id.Text = "";
+            tb_telefone.Text = "";
+            tb_celular.Text = "";
+            tb_email.Text = "";
+        }
+
+        private Contato CriarContato()
+        {
+            return new Contato
             {
                 Nome = tb_nome.Text,
                 Endereco = tb_endereco.Text,
@@ -78,21 +90,38 @@ namespace Agenda
                 Cep = tb_cep.Text,
                 Telefone = tb_telefone.Text,
                 Celular = tb_celular.Text,
-                Email = tb_email.Text
+                Email = tb_email.Text               
             };
+        }
 
-            dao.InserirContato(contato);
+        private void AlterarContato(object sender, RoutedEventArgs e)
+        {
+            Contato contato = CriarContato();
+            contato.Id = Int32.Parse(tb_id.Text);
+            ContatoDAO dao = new ContatoDAO();
+            dao.AlterarContato(contato);
+            ResetBtns(false);
+            ResetInputs();
+            MessageBox.Show("Contato alterado com sucesso");
+        }
 
-            tb_nome.Text = "";
-            tb_endereco.Text = "";
-            tb_numero.Text = "";
-            tb_bairro.Text = "";
-            tb_cidade.Text = "";
-            tb_cep.Text = "";
-            tb_telefone.Text = "";
-            tb_celular.Text = "";
-            tb_email.Text = "";
-            MessageBox.Show("Contato inserido com sucesso");
+        private void ExcluirContato(object sender, RoutedEventArgs e)
+        {
+            int id = Int32.Parse( inputID.Text);
+
+            ContatoDAO dao = new ContatoDAO();
+
+            dao.DeletarContato(id);
+
+            ResetInputs();
+            ResetBtns(false);
+
+            MessageBox.Show("Contato deletado com sucesso");
+        }
+
+        private void CloseApp(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
