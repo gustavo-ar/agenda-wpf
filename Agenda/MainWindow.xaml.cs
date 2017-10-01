@@ -62,8 +62,9 @@ namespace Agenda
         {
 
         }
+           
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void novoContato(object sender, RoutedEventArgs e)
         {
             ContatoDAO dao = new ContatoDAO();
 
@@ -81,6 +82,17 @@ namespace Agenda
             };
 
             dao.InserirContato(contato);
+
+            tb_nome.Text = "";
+            tb_endereco.Text = "";
+            tb_numero.Text = "";
+            tb_bairro.Text = "";
+            tb_cidade.Text = "";
+            tb_cep.Text = "";
+            tb_telefone.Text = "";
+            tb_celular.Text = "";
+            tb_email.Text = "";
+            MessageBox.Show("Contato inserido com sucesso");
         }
     }
 }

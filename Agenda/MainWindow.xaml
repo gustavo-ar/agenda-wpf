@@ -22,8 +22,8 @@
         <TextBox x:Name="tb_cidade" HorizontalAlignment="Left" Height="22" Margin="312,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
         <Label Content="CEP&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="33" Height="26"/>
         <TextBox x:Name="tb_cep" HorizontalAlignment="Left" Height="22" Margin="72,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" TextChanged="TextBox_TextChanged"/>
-        <Label Content="Nº" HorizontalAlignment="Left" Margin="385,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="54"/>
-        <TextBox x:Name="tb_numero" TextWrapping="Wrap" Height="22" Margin="465,87,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <Label Content="Nº" HorizontalAlignment="Left" Margin="394,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.901,4.296" Width="54"/>
+        <TextBox x:Name="tb_numero" TextWrapping="Wrap" Height="22" Margin="433,91,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
         <Label Content="Telefone" HorizontalAlignment="Left" Margin="259,163,0,0" VerticalAlignment="Top" Width="57"/>
         <Label Content="Celular" HorizontalAlignment="Left" Margin="7,192,0,0" VerticalAlignment="Top" Width="48"/>
         <TextBox x:Name="tb_celular" HorizontalAlignment="Left" Height="22" Margin="72,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" TextChanged="TextBox_TextChanged"/>
@@ -31,11 +31,11 @@
         <TextBox x:Name="tb_email" HorizontalAlignment="Left" Height="22" Margin="312,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
         <Label Content="Buscar por Id" HorizontalAlignment="Left" Margin="274,4,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="inputID" HorizontalAlignment="Left" Height="18" Margin="357,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" TextChanged="TextBox_TextChanged_2"/>
-        <TextBox x:Name="tb_nome" HorizontalAlignment="Right" Height="22" Margin="0,54,177,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" TextChanged="TextBox_TextChanged"/>
-        <Button x:Name="btn_excluir" Content="Excluir" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" RenderTransformOrigin="0.818,0.655"/>
-        <Button x:Name="btn_alterar" Content="Alterar" HorizontalAlignment="Left" Margin="309,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button x:Name="btn_novo" Content="Novo" HorizontalAlignment="Left" Margin="433,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button x:Name="btn_fechar" Content="Fechar" HorizontalAlignment="Left" Margin="23,274,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <TextBox x:Name="tb_nome" HorizontalAlignment="Right" Height="22" Margin="0,58,141,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="btn_excluir" Content="Excluir" HorizontalAlignment="Left" Margin="158,274,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.818,0.655"/>
+        <Button x:Name="btn_alterar" Content="Alterar" HorizontalAlignment="Left" Margin="309,274,0,0" VerticalAlignment="Top" Width="75" />
+        <Button x:Name="btn_novo" Content="Novo" HorizontalAlignment="Left" Margin="433,274,0,0" VerticalAlignment="Top" Width="75" Click="novoContato"/>
+        <Button x:Name="btn_fechar" Content="Fechar" HorizontalAlignment="Left" Margin="23,274,0,0" VerticalAlignment="Top" Width="75" />
         <TextBox x:Name="tb_telefone" HorizontalAlignment="Left" Height="22" Margin="312,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TextBox_TextChanged"/>
 
     </Grid>
