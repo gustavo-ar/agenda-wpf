@@ -53,8 +53,8 @@ namespace Agenda
             connection.Open();
 
             string query = "INSERT INTO tbcontato " +
-                "(nome ,endereco ,numero ,bairro ,cidade ,uf ,cep ,telefone ,celular ,email)    " +
-                " VALUES ( @NOME , @ENDERECO , @NUMERO , @BAIRRO , @CIDADE , @UF" +
+                "(nome ,endereco ,numero ,bairro ,cidade ,cep ,telefone ,celular ,email)    " +
+                " VALUES ( @NOME , @ENDERECO , @NUMERO , @BAIRRO , @CIDADE " +
                 " , @CEP , @TEL , @CEL , @EMAIL );";
 
             command = new SqlCommand(query, connection);
@@ -68,7 +68,6 @@ namespace Agenda
                 new SqlParameter("@NUMERO", SqlDbType.Int) {Value = contato.Numero},
                 new SqlParameter("@BAIRRO", SqlDbType.VarChar) {Value = contato.Bairro},
                 new SqlParameter("@CIDADE", SqlDbType.VarChar) {Value = contato.Cidade},
-                new SqlParameter("@UF", SqlDbType.VarChar) {Value = contato.Uf},
                 new SqlParameter("@CEP", SqlDbType.VarChar) {Value = contato.Cep},
                 new SqlParameter("@TEL", SqlDbType.VarChar) {Value = contato.Telefone},
                 new SqlParameter("@CEL", SqlDbType.VarChar) {Value = contato.Celular},

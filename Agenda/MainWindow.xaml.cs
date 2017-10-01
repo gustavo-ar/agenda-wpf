@@ -27,7 +27,7 @@ namespace Agenda
         }
 
 
-   
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -37,7 +37,7 @@ namespace Agenda
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ContatoDAO dao = new ContatoDAO();
-            int id = Int32.Parse( inputID.Text);
+            int id = Int32.Parse(inputID.Text);
             Contato contato = dao.BuscarContatoPorID(id);
 
             Console.WriteLine(contato.Nome);
@@ -55,30 +55,30 @@ namespace Agenda
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-          
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ContatoDAO dao = new ContatoDAO();
 
-            Contato contato = new Contato();
-
-            contato.Nome = "Batata";
-            contato.Endereco = "Teste";
-            contato.Numero = 200;
-            contato.Bairro = "Teste";
-            contato.Cidade = "Teste";
-            contato.Uf = "Teste";
-            contato.Cep = "Teste";
-            contato.Telefone = "Teste";
-            contato.Celular = "Teste";
-            contato.Email = "Teste";
+            Contato contato = new Contato
+            {
+                Nome = tb_nome.Text,
+                Endereco = tb_endereco.Text,
+                Numero = Int32.Parse(tb_numero.Text),
+                Bairro = tb_bairro.Text,
+                Cidade = tb_cidade.Text,
+                Cep = tb_cep.Text,
+                Telefone = tb_telefone.Text,
+                Celular = tb_celular.Text,
+                Email = tb_email.Text
+            };
 
             dao.InserirContato(contato);
         }
